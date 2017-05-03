@@ -12,13 +12,30 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 public class QRSound{
-	private static final int GOTO_ENGINEERING =1;// Go to engineering message
-	
+	public static final int GOTO_ENGINEERING =1;// Go to engineering message
+	public static final int GOTO_MAIN =2;
+	public static final int GOTO_BUSINESS =3;
+	public static final int GOTO_F =4;
+	public static final int GOTO_C =5;
+	public static final int GOTO_SCIENCE =6;
+	public static final int GOTO_SORRY =7;
 	public static void main(String[] args){
 		
 		playit(GOTO_ENGINEERING);
-		delayfor(7);	// delay for 7 seconds
-
+		delayfor(15);
+		playit(GOTO_MAIN);
+		delayfor(15);
+		playit(GOTO_BUSINESS);
+		delayfor(15);
+		playit(GOTO_F);
+		delayfor(15);
+		playit(GOTO_C);
+		delayfor(15);
+		playit(GOTO_SCIENCE);
+		delayfor(15);
+		playit(GOTO_SORRY);
+		delayfor(15);
+		// delay for 15 seconds
 	}
 	
 	public static void delayfor(int n)
@@ -38,11 +55,44 @@ public class QRSound{
 		File sound;
         URL location =QRSound.class.getProtectionDomain().getCodeSource().getLocation();
 
+		
 		switch(soundRequired){
 		case GOTO_ENGINEERING:
-			fn=location.getFile()+"../src/resources/engineering.wav";
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/engineering.wav";
+			fn = "C:/Users/Emma/Documents/engineering.wav";
 			break;
-
+		case GOTO_MAIN:
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/main.wav";
+			fn = "C:/Users/Emma/Documents/Main.wav";
+			break;
+		case GOTO_BUSINESS:
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/main.wav";
+			fn = "C:/Users/Emma/Documents/Business.wav";
+			break;
+		
+		case GOTO_C:
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/main.wav";
+			fn = "C:/Users/Emma/Documents/C.wav";
+			break;
+		case GOTO_F:
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/main.wav";
+			fn = "C:/Users/Emma/Documents/F.wav";
+			break;
+		case GOTO_SCIENCE:
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/main.wav";
+			fn = "C:/Users/Emma/Documents/Science.wav";
+			break;
+		case GOTO_SORRY:
+			System.out.println("location.getFile():" + location.getFile());
+			//fn=location.getFile()+"../src/resources/main.wav";
+			fn = "C:/Users/Emma/Documents/Sorry.wav";
+			break;
 		default:
 			break;
 
