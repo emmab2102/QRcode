@@ -1,6 +1,13 @@
 package ie.itsligo.roomroute;
 
 public class Directions {
+	private static final int GOTO_ENGINEERING = 1;
+	private static final int GOTO_MAIN= 2;
+	private static final int GOTO_BUSINESS =3;
+	private static final int GOTO_F =4;
+	private static final int GOTO_C =5;
+	private static final int GOTO_SCIENCE =6;
+	private static final int GOTO_SORRY =7;
 	private final int ROOM_LENGTH = 5; // size of the room string
 	private char building ;
 	private char floor;
@@ -70,33 +77,54 @@ public class Directions {
 	 * Get directions to building
 	 */
 	public String toBuilding() {
+
 		String directions = null;
 		switch (this.building) {
 		case 'A':
 			// TODO play the sound here for this here
+			//QRSound qs = new QRSound();
+            //qs.playit(GOTO_MAIN);
+			//qs.delayfor(15);
 			directions = "Main Block\nFrom reception, walk straight ahead and then turn to your right";
 			break;
 		case 'B':
 			// TODO play the sound here for this here
+			//qs.playit(GOTO_SCIENCE);
+			//qs.delayfor(15);
+            
+			
 			directions = "Science Block\nFrom reception, go up main stairs on your left and turn right.  Walk for 40m past Library until you read the Booknest";
 			break;
 		case 'C':
 			// TODO play the sound here for this here
+			//qs.playit(GOTO_C);
+			//qs.delayfor(15);
 			directions = "C Block\nFrom reception, go up main stairs on your left and turn right.  Walk for 40m past Library until you read the Booknest, then turn left and conrinute through long corridor";
 			break;
 		case 'D':
 			// TODO play the sound here for this here
-			directions = "Business Block\n From reception, go up main stairs on your left and turn right.  Walk for 40m past Library until you read the Booknest, then turn left and conrinute through long corridor";
+			//qs.playit(GOTO_BUSINESS);
+			//qs.delayfor(15);
+			directions = "Business Block\nrom reception, go up main stairs on your left and turn right.  Walk for 40m past Library until you read the Booknest, then turn left and conrinute through long corridor";
 			break;
 		case 'E':
 			// TODO play the sound here for this here
+		
+			QRSound qs = new QRSound();
+            qs.playit(GOTO_ENGINEERING);
+			qs.delayfor(15);
+			
 			directions = "Engineering Block\nFrom reception, move the the centre of reception and turn left into the engineering building";
 			break;
 		case 'F':
 			// TODO play the sound here for this here
+			//qs.playit(GOTO_F);
+			//qs.delayfor(15);
 			directions = "F Block\nFrom reception, walk outside and turn to your right.  Walk past the engineering building and the F block is straigt in front";
 			break;
 		default:
+			//qs.playit(GOTO_SORRY);
+			//qs.delayfor(15);
 			directions = "Sorry, that building in not recognised";
 			break;
 			
